@@ -5,9 +5,12 @@ const cartRoutes=require("./routes/cartRoutes")
 const orderRoutes=require("./routes/orderRoutes")
 const wishlistRoutes = require("./routes/wishlistRoutes");
 const app=express();
+const cors = require("cors"); 
+
 
 const mongoose=require('mongoose');
 app.use(express.json());
+app.use(cors()); // Use cors
 mongoose.connect(
     "mongodb+srv://shree:shree@cluster0.tnn81uy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 ).then(()=>{
